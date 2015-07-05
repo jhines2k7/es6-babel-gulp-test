@@ -1,0 +1,16 @@
+{
+  "name": "e6s-babel-gulp-test",
+  "version": "0.1.0",
+  "description": "Simple project to test the gulp-babel plugin",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "gulp; node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-babel": "^5.1.0"
+  }
+}
