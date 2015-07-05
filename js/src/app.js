@@ -19,3 +19,35 @@ console.log('Nums: ' + nums);
 
 var pairs = evens.map(v => ({even: v, odd: v + 1}));
 console.log('Pairs: ' + JSON.stringify(pairs));
+
+class View {
+    constructor(options) {
+        this.model = options.model;
+        this.template = options.template;
+    }
+
+    render() {
+        return _.template(this.template, this.model.toObject());
+    }
+}
+
+class Model {
+    constructor(properties) {
+        this.properties = properties;
+    }
+
+    toObject() {
+        return this.properties;
+    }
+}
+
+var james = new Model({
+    name: 'James'
+});
+
+var view = new View({
+    model: james,
+    template: 'Hello, <%= name =%>'
+});
+
+console.log(view.render());
