@@ -4,7 +4,7 @@
   "description": "Simple project to test the gulp-babel plugin",
   "main": "dist/app.js",
   "scripts": {
-    "start": "gulp; node dist/app.js",
+    "start": "gulp; babel-node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

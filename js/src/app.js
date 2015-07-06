@@ -1,3 +1,5 @@
+import * as math from './lib/math';
+
 var developer = 'James Hines';
 
 console.log(`Yo! My name is ${developer}!`);
@@ -27,7 +29,7 @@ class View {
     }
 
     render() {
-        return _.template(this.template, this.model.toObject());
+        return this.template;
     }
 }
 
@@ -47,7 +49,9 @@ var james = new Model({
 
 var view = new View({
     model: james,
-    template: 'Hello, <%= name =%>'
+    template: `Hello, ${james.toObject().name}`
 });
 
 console.log(view.render());
+
+console.log('2pi = ' + math.sum(math.pi, math.pi));

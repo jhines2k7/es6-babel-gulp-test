@@ -7,4 +7,9 @@ gulp.task('es6To5', function(){
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['es6To5']);   
+gulp.task('copy', function() {
+    return gulp.src('js/lib/**/*')
+        .pipe(gulp.dest('dist/lib'))
+})
+
+gulp.task('default', ['copy', 'es6To5']);   
